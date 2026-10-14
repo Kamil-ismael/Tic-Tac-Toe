@@ -2,23 +2,30 @@ let board = ["","","","","","","","",""];
 let currentPlayer = "X";
 let cells = document.querySelectorAll(".cell")
 let gameOver = false;
+let resetButton = document.getElementById("reset")
+
 cells.forEach((cell, index) => {
    cell.addEventListener("click", () =>{
       if(cell.textContent !== "" || gameOver == true) return
       board[index] = currentPlayer
       cell.textContent = currentPlayer
-      if(currentPlayer === "X")
+      checkWinner()
+      if(!gameOver){
+         if(currentPlayer === "X")
          currentPlayer = "O"
       else{
          currentPlayer = "X"
       }
-      checkWinner()
-      
+      }
    })
    
 });
 
-function checkWinner(){
+resetButton.addEventListener("click", () => {
+   resetGame()
+})
+
+const checkWinner = () => {
    const winningCombinations = [
     [0, 1, 2],
     [3, 4, 5],
@@ -42,5 +49,12 @@ function checkWinner(){
       if (isBoardFull) {
          alert ("It's a draw!");
    }
+}
+
+const resetGame = () => {
+   board = ["", "", "", "", "", "", "", "", ""];
+   currentPlayer = "X";
+   gameOver = false;
+   cells.forEach((cell) => cell.textContent = "")
 }
 

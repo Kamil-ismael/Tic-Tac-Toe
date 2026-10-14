@@ -39,3 +39,26 @@ h1 {
 .cell:hover {
     background-color: #e0e0e0;
 }
+.reset-button{
+    margin-top: 20px;
+}
+#reset {
+    padding: 12px 28px;
+    background-color: #262626;
+    color: white;
+    border: 1px solid #525252;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#reset:hover {
+    background-color: #404040;
+    transform: translateY(-2px);
+}
+
+#reset:active {
+    transform: translateY(0);
+}
