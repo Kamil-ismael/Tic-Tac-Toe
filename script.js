@@ -1,8 +1,8 @@
 let board = ["","","","","","","","",""];
 let currentPlayer = "X";
-let cells = document.querySelectorAll(".cell")
+const cells = document.querySelectorAll(".cell")
 let gameOver = false;
-let resetButton = document.getElementById("reset")
+const resetButton = document.getElementById("reset")
 
 cells.forEach((cell, index) => {
    cell.addEventListener("click", () =>{
